@@ -8,11 +8,13 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to="/" className={({ isActive }) =>
-            isActive ? 'text-[#b99954] border-2 border-black' : 'text-[#b99954]'}>Home</NavLink></li>
-        <li><NavLink to="/membership" className={({ isActive }) =>
-            isActive ? 'text-[#b99954] border-2 border-black' : 'text-[#b99954]'}>Membership</NavLink></li>
-        <li><NavLink to="/updateprofile" className={({ isActive }) =>
-            isActive ? 'text-[#b99954] border-2 border-black' : 'text-[#b99954]'}>Update Profile</NavLink></li>
+            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>Home</NavLink></li>
+            <li><NavLink to="/allartcraft" className={({ isActive }) =>
+            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>All Art & craft</NavLink></li>
+        <li><NavLink to="/addcraft" className={({ isActive }) =>
+            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>Add Craft</NavLink></li><li><NavLink to="/myartcraft" className={({ isActive }) =>
+            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>My Art & Craft</NavLink></li>
+        
         
     </>
 

@@ -8,11 +8,12 @@ import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-// import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-// import UpdateProfile from './components/UpdateProfile/UpdateProfile';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AOS from 'aos';
+import AllArtCraft from './components/AllArtCraft/AllArtCraft';
+import MyArtCraft from './components/MyArtCraft/MyArtCraft';
+import AddCraft from './components/AddCraft/AddCraft';
 import 'aos/dist/aos.css'; 
-// import UserProfile from './components/UserProfile/UserProfile.jsx';
 AOS.init();
 
 import {
@@ -38,12 +39,22 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>,
       },
-      // {
-      //   path: '/membership',
-      //   element: <ProtectedRoute> 
-      //          <Membership></Membership>,
-      // </ProtectedRoute>,
-      // },
+      {
+        path: '/allartcraft',
+        element: <AllArtCraft></AllArtCraft>,
+      },
+      {
+        path: '/addcraft',
+        element: <ProtectedRoute> 
+               <AddCraft></AddCraft>,
+      </ProtectedRoute>,
+      },
+      {
+        path: '/myartcraft',
+        element: <ProtectedRoute> 
+               <MyArtCraft></MyArtCraft>,
+      </ProtectedRoute>,
+      },
      
       // {
       //   path: '/estate/:id',
