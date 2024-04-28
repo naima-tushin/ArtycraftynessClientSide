@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddCraft = () => {
     const { user } = useAuth();
@@ -38,13 +39,18 @@ const AddCraft = () => {
         .then(data => {
             console.log(data);
         })
+        Swal.fire({
+            title: `${formData.itemName} is Added`,
+            text: "Craft Added Successfully",
+            icon: "success"
+          });
     };
 
 
     return (
         <div className="font-roboto">
             <Helmet>
-                <title>Elite Estates | Add Craft</title>
+                <title>Add Craft</title>
             </Helmet>
             <form onSubmit={handleAddCraft} className="p-20 items-center gap-20">
                 {/* Image Url */}
