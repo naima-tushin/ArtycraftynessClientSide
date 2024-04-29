@@ -10,7 +10,7 @@ const AllArtCraft = () => {
        
         <div className='flex flex-col items-center'> 
          <Helmet>
-                <title>All Arts and Craft</title>
+                <title>Artycraftyness | All Arts and Craft</title>
             </Helmet>
             <h1>Our All Painting and Drawing</h1>
             <div className='flex flex-wrap justify-center'>

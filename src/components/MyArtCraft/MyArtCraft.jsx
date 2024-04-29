@@ -11,7 +11,7 @@ const MyArtCraft = () => {
 
         <div className='flex flex-col items-center'>
             <Helmet>
-                <title>My Arts and Craft</title>
+                <title>Artycraftyness | My Arts and Craft List</title>
             </Helmet>
             <div className='flex flex-wrap justify-center'>
                 {allCraft.map(craft => (

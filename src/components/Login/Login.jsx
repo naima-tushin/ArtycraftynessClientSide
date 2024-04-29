@@ -50,7 +50,7 @@ const Login = () => {
         <div className="font-roboto">
             
             <Helmet>
-                <title>Elite Estates | Login</title>
+                <title>Artycraftyness | Login</title>
             </Helmet>
 
             <div className="hero  bg-[#b99954]">
