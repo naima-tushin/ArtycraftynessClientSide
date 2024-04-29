@@ -8,12 +8,12 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to="/" className={({ isActive }) =>
-            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>Home</NavLink></li>
+            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>Home</NavLink></li>
             <li><NavLink to="/allartcraft" className={({ isActive }) =>
-            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>All Art & craft</NavLink></li>
+            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>All Art & craft Items</NavLink></li>
         <li><NavLink to="/addcraft" className={({ isActive }) =>
-            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>Add Craft</NavLink></li><li><NavLink to="/myartcraft" className={({ isActive }) =>
-            isActive ? 'text-[#322760] border-2 border-black' : 'text-[#322760]'}>My Art & Craft</NavLink></li>
+            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>Add Craft Item</NavLink></li><li><NavLink to="/myartcraft" className={({ isActive }) =>
+            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>My Art & Craft List</NavLink></li>
         
         
     </>
@@ -33,7 +33,7 @@ const Navbar = () => {
 
                     <div className="flex-1">
                         <Link to='/'>
-                            <img src={logo} alt="" className="lg:ml-10 ml-12 md:ml-60 w-[500px] lg:w-[180px] md:w-[180px] lg:h-28 md:h-28 h-14" /></Link>
+                            <img src={logo} alt="" className="lg:ml-10 ml-12 md:ml-60 w-[500px] lg:w-[130px] md:w-[180px] lg:h-24 md:h-28 h-14" /></Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
