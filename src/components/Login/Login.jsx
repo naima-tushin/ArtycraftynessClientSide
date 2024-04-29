@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import backgroundImg from '../../assets/images/bg-login.png';
 
 const Login = () => {
 
@@ -53,32 +54,32 @@ const Login = () => {
                 <title>Artycraftyness | Login</title>
             </Helmet>
 
-            <div className="hero  bg-[#b99954]">
-                <div className="hero-content mt-12">
-                    <div className="card shrink-0 mb-14 md:w-[500px] lg:w-[500px] border-2 bg-base-100">
+            <div className="hero" style={{ backgroundImage: `url(${backgroundImg})` }}>
+                <div className="hero-content mt-8">
+                    <div className="card shrink-0 mb-8 md:w-[500px] lg:w-[500px] border-2 bg-gray-500 border-none">
 
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
-                            <h1 className="flex justify-center font-bold text-xl lg:text-3xl text-gray-500">Login</h1>
+                            <h1 className="flex justify-center font-bold text-xl lg:text-4xl text-[#322760]">Login</h1>
 
                             <div className="form-control">
 
-                                <label className="label">
+                                <label className="label text-[#322760]">
                                     <span className="label-text">Email</span>
                                 </label>
 
                                 <div className="relative">
                                     <input type="email" placeholder="Email" {...register("email", { required: true })} className="input input-bordered pl-10 w-full" />
-                                    <FaEnvelope className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaEnvelope>
+                                    <FaEnvelope className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaEnvelope>
                                 </div>
 
-                                {errors.Email && <span className="text-red-500">This field is required</span>}
+                                {errors.email && <span className="text-red-500">This field is required</span>}
 
                             </div>
 
                             <div className="form-control">
 
-                                <label className="label">
+                                <label className="label text-[#322760]">
                                     <span className="label-text">Password</span>
                                 </label>
 
@@ -87,26 +88,26 @@ const Login = () => {
                                         placeholder="Password"
                                         {...register("password", { required: true })}
                                         className="input input-bordered pl-10 w-full" />
-                                    <span onClick={() => setShowLoginPass(!showLoginPass)} className="absolute top-7 right-3 transform -translate-y-1/2 h-6 text-xl text-[#b99954]">
+                                    <span onClick={() => setShowLoginPass(!showLoginPass)} className="absolute top-7 right-3 transform -translate-y-1/2 h-6 text-xl text-[#c54899]">
                                         {
                                             showLoginPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                                         }
                                     </span>
-                                    <FaLock className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaLock>
+                                    <FaLock className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaLock>
                                 </div>
 
-                                {errors.Password && <span className="text-red-500">This field is required</span>}
+                                {errors.password && <span className="text-red-500">This field is required</span>}
 
                             </div>
 
 
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#b99954] text-black text-base hover:bg-gray-500 hover:text-black hover:border-black">Login</button>
+                                <button className="btn bg-[#322760] text-white border-none text-base hover:bg-[#c54899]">Login</button>
                             </div>
 
 
                             <div className="text-center mt-2">
-                            <p className="text-sm text-gray-500">Don’t have an account yet? <Link to="/register" className="font-medium text-black">Sign Up</Link></p>
+                            <p className="text-sm text-white">Don’t have an account yet? <Link to="/register" className="font-bold text-[#322760]">Sign Up</Link></p>
                         </div>
 
                             <SocialLogin></SocialLogin>

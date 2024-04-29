@@ -22,7 +22,7 @@ const SocialLogin = () => {
             <div className="flex flex-col items-center justify-center gap-4 mt-3">
                 <button
                     onClick={() => handleSocialLogin(googleLogin)}
-                    className="bg-black hover:bg-gray-700 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
+                    className="bg-[#c54899] hover:bg-[#322760] text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
                 >
                     <FaGoogle />
                     <span>Sign in with Google</span>
@@ -30,7 +30,7 @@ const SocialLogin = () => {
 
                 <button
                     onClick={() => handleSocialLogin(githubLogin)}
-                    className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
+                    className="bg-[#322760] hover:bg-[#c54899] text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
                 >
                     <FaGithub />
                     <span>Sign in with GitHub</span>

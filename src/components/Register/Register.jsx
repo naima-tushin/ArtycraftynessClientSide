@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import backgroundImg from '../../assets/images/bg-login.png';
 
 const Register = () => {
     const { createUser, updateUserProfile } = useAuth();
@@ -29,8 +30,8 @@ const Register = () => {
         setRegisterError('');
         setSuccess('');
 
-        if (password.length < 6 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password)) {
-            setRegisterError('Password should be at least 6 characters and contain at least one uppercase letter, one lowercase letter, and one digit');
+        if (password.length < 6 || !/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+            setRegisterError('Password should be at least 6 characters and contain at least one uppercase letter and one lowercase letter');
             return;
         }
 
@@ -53,15 +54,15 @@ const Register = () => {
     return (
         <div className="font-roboto">
             <Helmet>
-                <title>Elite Estates | Register</title>
+                <title>Artycraftyness | Register</title>
             </Helmet>
 
-            <div className="hero bg-[#b99954]">
-                <div className="hero-content mt-12">
-                    <div className="card shrink-0 mb-14 md:w-[500px] lg:w-[500px] border-2 bg-base-100">
+            <div className="hero" style={{ backgroundImage: `url(${backgroundImg})` }}>
+                <div className="hero-content mt-6">
+                    <div className="card shrink-0 mb-6 md:w-[500px] lg:w-[500px] border-2 bg-gray-500 border-none">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
-                            <h1 className="flex justify-center text-xl lg:text-3xl text-gray-500">Register</h1>
+                            <h1 className="flex justify-center font-bold text-xl lg:text-4xl text-[#322760]">Register</h1>
 
                             {registerError && (
                                 <p className="text-red-500 flex justify-center text-base font-sedan p-1">{registerError}</p>
@@ -72,58 +73,58 @@ const Register = () => {
                             )}
 
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Full Name</span>
+                                <label className="label text-[#322760]">
+                                    <span className="label-text">Name</span>
                                 </label>
                                 <div className="relative">
-                                    <input type="text" placeholder="Full Name" {...register("fullname", { required: true })} className="input input-bordered pl-10 w-full" />
-                                    <FaUser className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaUser>
+                                    <input type="text" placeholder="Name" {...register("fullname", { required: true })} className="input input-bordered pl-10 w-full" />
+                                    <FaUser className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaUser>
                                 </div>
                                 {errors.fullname && <span className="text-red-500 mt-2">This field is required</span>}
                             </div>
 
                             <div className="form-control">
-                                <label className="label">
+                                <label className="label text-[#322760]">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <div className="relative">
                                     <input type="email" placeholder="Email" {...register("email", { required: true })} className="input input-bordered pl-10 w-full" />
-                                    <FaEnvelope className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaEnvelope>
+                                    <FaEnvelope className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaEnvelope>
                                 </div>
                                 {errors.email && <span className="text-red-500 mt-2">This field is required</span>}
                             </div>
 
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Image Url</span>
+                                <label className="label text-[#322760]">
+                                    <span className="label-text">Photo URL</span>
                                 </label>
                                 <div className="relative">
-                                    <input type="text" placeholder="Image URL" {...register("imageURL", { required: true })} className="input input-bordered pl-10 w-full" />
-                                    <FaLink className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaLink>
+                                    <input type="text" placeholder="Photo URL" {...register("imageURL", { required: true })} className="input input-bordered pl-10 w-full" />
+                                    <FaLink className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaLink>
                                 </div>
                                 {errors.imageURL && <span className="text-red-500 mt-2">This field is required</span>}
                             </div>
 
                             <div className="form-control">
-                                <label className="label">
+                                <label className="label text-[#322760]">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <div className="relative">
                                     <input type={showPass ? "text" : "password"} placeholder="Password" {...register("password", { required: true })} className="input input-bordered pl-10 w-full" />
-                                    <span onClick={() => setShowPass(!showPass)} className="absolute top-7 right-3 transform -translate-y-1/2 h-6 text-xl text-[#b99954]">
+                                    <span onClick={() => setShowPass(!showPass)} className="absolute top-7 right-3 transform -translate-y-1/2 h-6 text-xl text-[#c54899]">
                                         {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                                     </span>
-                                    <FaLock className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#b99954]"></FaLock>
+                                    <FaLock className="absolute top-1/2 left-3 transform -translate-y-1/2 h-6 text-[#c54899]"></FaLock>
                                 </div>
                                 {errors.password && <span className="text-red-500 mt-2">This field is required</span>}
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#b99954] text-black text-xl hover:bg-gray-500">Register</button>
+                                <button className="btn bg-[#322760] hover:bg-[#c54899] border-none text-white text-xl ">Register</button>
                             </div>
 
                             <div className="text-center mt-2">
-                                <p className="text-sm text-gray-500">Have an account? <Link to="/login" className="font-medium text-black">Please Login</Link></p>
+                                <p className="text-sm text-white">Already have an account? <Link to="/login" className="font-medium text-[#322760]">Please Login</Link></p>
                             </div>
                             <SocialLogin></SocialLogin>
                         </form>

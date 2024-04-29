@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png';
 import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
             isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>Add Craft Item</NavLink></li><li><NavLink to="/myartcraft" className={({ isActive }) =>
                 isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>My Art & Craft List</NavLink></li>
     </>
-    
+
     return (
         <div className="mx-auto">
             <div className="navbar bg-slate-50 shadow-lg">
