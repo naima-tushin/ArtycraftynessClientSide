@@ -90,9 +90,9 @@ const AddCraft = () => {
                     <option value="In stock">In stock</option>
                     <option value="Made to Order">Made to Order</option>
                 </select>
-                {/* Submit Button */}
+                {/* Add Button */}
                 <br />
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Add</button>
             </form>
         </div>
     );

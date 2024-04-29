@@ -1,26 +1,9 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
-const CraftDetails = ({ location }) => {
-    const { craft } = location.state || {}; // Destructure craft from location.state, provide empty object as fallback
-    if (!craft) {
-        // Handle the case where craft data is not available
-        return <div>No craft data available</div>;
-    }
-
-    // Destructure craft object
-    const {
-        imageUrl,
-        itemName,
-        subcategoryName,
-        shortDescription,
-        price,
-        rating,
-        customization,
-        processingTime,
-        stockStatus,
-        userEmail,
-        userName
-    } = craft;
+const CraftDetails = () => {
+    const craft = useLoaderData();
+    const {_id, imageUrl, itemName, subcategoryName, shortDescription, price, rating, customization, processingTime, stockStatus, userEmail, userName } = craft;
 
     return (
         <div>
@@ -35,8 +18,7 @@ const CraftDetails = ({ location }) => {
                 <p>Customization: {customization}</p>
                 <p>Processing Time: {processingTime}</p>
                 <p>Stock Status: {stockStatus}</p>
-                <p>User Email: {userEmail}</p>
-                <p>User Name: {userName}</p>
+                
             </div>
         </div>
     );

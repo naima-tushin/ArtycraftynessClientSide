@@ -16,10 +16,9 @@ const CraftCard = ({ craft }) => {
                 <p>Price: <span className='text-red-500'>${price}</span> </p>
                 <p>Rating: <span className='text-yellow-400 font-semibold'>⭐ {rating}</span> </p>
             </div>
-            <Link to={{
-                    pathname: `/CraftDetails/${_id}`,
-                    state: { craft }
-                }} className="btn btn-primary">View Details</Link>
+            <Link to={`/CraftDetails/${_id}`}>
+            <button className="btn">View Details</button>
+            </Link>
             
         </div>
     );

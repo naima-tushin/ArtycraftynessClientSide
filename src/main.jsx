@@ -14,6 +14,7 @@ import AllArtCraft from './components/AllArtCraft/AllArtCraft';
 import MyArtCraft from './components/MyArtCraft/MyArtCraft';
 import AddCraft from './components/AddCraft/AddCraft';
 import CraftDetails from './components/CraftDetails/CraftDetails';
+import UpdateCraft from './components/UpdateCraft/UpdateCraft';
 
 import 'aos/dist/aos.css'; 
 AOS.init();
@@ -51,17 +52,24 @@ const router = createBrowserRouter([
         element: <ProtectedRoute> 
                <AddCraft></AddCraft>,
       </ProtectedRoute>,
+      
       },
       {
         path: '/myartcraft',
         element: <ProtectedRoute> 
                <MyArtCraft></MyArtCraft>,
       </ProtectedRoute>,
+      loader: () => fetch('http://localhost:5000/craft')
       },
       {
         path: '/CraftDetails/:id',
         element: <CraftDetails></CraftDetails>,
-       
+        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+      },
+      {
+        path: '/updateCraft/:id',
+        element:<UpdateCraft></UpdateCraft>,
+        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
       },
     ]
   },
