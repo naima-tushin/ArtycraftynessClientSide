@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import CraftItemsSection from '../CraftItemsSection/CraftItemsSection';
 import { useLoaderData } from 'react-router-dom';
 import CraftCard from '../CraftCard/CraftCard';
+import PaintingDrawingSection from '../PaintingDrawingSection/PaintingDrawingSection';
 
 const home = () => {
     const craftItem = useLoaderData();
@@ -29,7 +30,9 @@ const home = () => {
             <CraftItemsSection key={craftItems._id} craftItems={craftItems}></CraftItemsSection>
         ))
     }
+    
 </div>
+<h1 className="text-center font-bold text-4xl text-[#322760] my-14">Art & Craft Categories</h1>
 <div className='flex flex-wrap justify-center'>
                 {craftSubcategoryItems.map(craft => (
                     <div key={craft._id} className='flex flex-col items-center mx-4 my-2'> 
@@ -37,9 +40,12 @@ const home = () => {
                     </div>
                 ))}
             </div>
+            {
+        craftItem.slice(0, 1).map(craftItems => (
+            <PaintingDrawingSection key={craftItems._id} craftItems={craftItems}></PaintingDrawingSection>
+        ))
+    }
 <div className='text-center font-bold text-4xl text-[#322760] mb-5'>
-    <h1 className="text-[#c54899] mb-5">Art & Craft Categories</h1>
-    <h1 className="text-[#c54899] mb-5">Relevant</h1>
     <h1 className="text-[#c54899] mb-5">Section</h1>
 </div>
 
