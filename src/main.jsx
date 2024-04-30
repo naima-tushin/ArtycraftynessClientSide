@@ -34,6 +34,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('https://users-management-server-five.vercel.app/craft')
+        
       },
       {
         path: '/login',
