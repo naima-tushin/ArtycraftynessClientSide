@@ -12,7 +12,8 @@ const Navbar = () => {
         <li><NavLink to="/allartcraft" className={({ isActive }) =>
             isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>All Art & Craft Items</NavLink></li>
         <li><NavLink to="/addcraft" className={({ isActive }) =>
-            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>Add Craft Item</NavLink></li><li><NavLink to="/myartcraft" className={({ isActive }) =>
+            isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>Add Craft Item</NavLink></li>
+            <li><NavLink to={`/myartcraft/${user?.email}`} className={({ isActive }) =>
                 isActive ? 'bg-[#322760] text-white hover:bg-[#c54899] border-2 border-[#322760]' : 'text-[#322760] hover:bg-[#c54899] hover:text-white'}>My Art & Craft List</NavLink></li>
     </>
 
