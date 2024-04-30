@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Banner from '../Banner/Banner';
 import { Helmet } from "react-helmet-async";
 import CraftItemsSection from '../CraftItemsSection/CraftItemsSection';
 import { useLoaderData } from 'react-router-dom';
+import CraftCard from '../CraftCard/CraftCard';
 
 const home = () => {
     const craftItem = useLoaderData();
+    const [craftSubcategoryItems, setCraftSubcategoryItems] = useState([]);
+    useEffect(() => {
+        // Fetch data from the API when the component mounts
+        fetch('http://localhost:5000/craftSubcategory')
+            .then(response => response.json())
+            .then(data => setCraftSubcategoryItems(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+    console.log(craftSubcategoryItems);
+
     return (
         <div>
             <Banner></Banner>
@@ -19,13 +30,19 @@ const home = () => {
         ))
     }
 </div>
+<div className='flex flex-wrap justify-center'>
+                {craftSubcategoryItems.map(craft => (
+                    <div key={craft._id} className='flex flex-col items-center mx-4 my-2'> 
+                        <CraftCard craft={craft} />
+                    </div>
+                ))}
+            </div>
 <div className='text-center font-bold text-4xl text-[#322760] mb-5'>
     <h1 className="text-[#c54899] mb-5">Art & Craft Categories</h1>
     <h1 className="text-[#c54899] mb-5">Relevant</h1>
     <h1 className="text-[#c54899] mb-5">Section</h1>
 </div>
 
-            {/* <CraftItemsSection></CraftItemsSection> */}
             <div>
                 <Helmet>
                     <title>Artycraftyness | Home</title>

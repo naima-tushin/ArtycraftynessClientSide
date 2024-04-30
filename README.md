@@ -1,6 +1,6 @@
 Name of Website: Artycraftyness (B9 A10 Type-02 Requirements)
 
-Live Site URL: 
+Vercel Live Site URL: https://users-management-server-it4wiz57o-naima-tushins-projects.vercel.app
 
 Firebase Hosting URL: https://artsandcraft-16065.web.app
 

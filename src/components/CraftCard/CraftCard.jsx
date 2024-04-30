@@ -15,6 +15,7 @@ const CraftCard = ({ craft }) => {
                 <p>Category: {subcategoryName}</p>
                 <p>Price: <span className='text-red-500'>${price}</span> </p>
                 <p>Rating: <span className='text-yellow-400 font-semibold'>⭐ {rating}</span> </p>
+                <p>Customizable: <span className='text-yellow-400 font-semibold'> {customization}</span> </p>
             </div>
             <Link to={`/CraftDetails/${_id}`}>
             <button className="btn">View Details</button>

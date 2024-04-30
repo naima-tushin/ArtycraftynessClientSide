@@ -50,6 +50,7 @@ const MyCraftCard = ({ craft, allCraft, setAllCraft }) => {
                 <p>By: {userName}</p>
                 <p>Price: <span className='text-red-500'>${price}</span> </p>
                 <p>Rating: <span className='text-yellow-400 font-semibold'>⭐ {rating}</span> </p>
+                <p>Customizable: <span className='text-black font-semibold'> {customization}</span> </p>
             </div>
             <div className='ml-8 mb-2 flex flex-row gap-8'>
             <Link to={`/CraftDetails/${_id}`}>
