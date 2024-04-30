@@ -12,7 +12,7 @@ const home = () => {
     const [craftSubcategoryItems, setCraftSubcategoryItems] = useState([]);
     useEffect(() => {
         // Fetch data from the API when the component mounts
-        fetch('http://localhost:5000/craftSubcategory')
+        fetch('https://users-management-server-five.vercel.app/craftSubcategory')
             .then(response => response.json())
             .then(data => setCraftSubcategoryItems(data))
             .catch(error => console.error('Error fetching data:', error));

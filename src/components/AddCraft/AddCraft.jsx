@@ -30,7 +30,7 @@ const AddCraft = () => {
         
         if (formData.itemName !== '' && formData.imageUrl !== '' && formData.price !== '' ){
             console.log(formData); 
-        fetch('http://localhost:5000/craft', {
+        fetch('https://users-management-server-five.vercel.app/craft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -26,7 +26,7 @@ const UpdateCraft = () => {
         const updateCraft = {name, imageUrl, subcategoryName, shortDescription, price, rating, customization, processingTime, stockStatus}
         
         console.log(updateCraft);
-        fetch(`http://localhost:5000/craft/${_id}`, {
+        fetch(`https://users-management-server-five.vercel.app/craft/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://users-management-server-five.vercel.app/craft')
       },
       {
         path: '/login',
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/allartcraft',
         element: <AllArtCraft></AllArtCraft>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://users-management-server-five.vercel.app/craft')
       },
       {
         path: '/addcraft',
@@ -59,19 +59,19 @@ const router = createBrowserRouter([
         element: <ProtectedRoute> 
                <MyArtCraft></MyArtCraft>,
       </ProtectedRoute>,
-      loader: ({params}) => fetch(`http://localhost:5000/myCraft/${params.userEmail}`)
+      loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/myCraft/${params.userEmail}`)
       },
       {
         path: '/CraftDetails/:id',
         element: <ProtectedRoute>
           <CraftDetails></CraftDetails>
           </ProtectedRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
       },
       {
         path: '/updateCraft/:id',
         element:<UpdateCraft></UpdateCraft>,
-        loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
       },
     ]
   },
