@@ -5,6 +5,7 @@ import CraftItemsSection from '../CraftItemsSection/CraftItemsSection';
 import { useLoaderData } from 'react-router-dom';
 import CraftCard from '../CraftCard/CraftCard';
 import PaintingDrawingSection from '../PaintingDrawingSection/PaintingDrawingSection';
+import Accordion from '../Accordion/Accordion';
 
 const home = () => {
     const craftItem = useLoaderData();
@@ -45,9 +46,12 @@ const home = () => {
             <PaintingDrawingSection key={craftItems._id} craftItems={craftItems}></PaintingDrawingSection>
         ))
     }
-<div className='text-center font-bold text-4xl text-[#322760] mb-5'>
-    <h1 className="text-[#c54899] mb-5">Section</h1>
-</div>
+     {
+        craftItem.slice(0, 1).map(craftItems => (
+            <Accordion key={craftItems._id} craftItems={craftItems}></Accordion>
+        ))
+    }
+
 
             <div>
                 <Helmet>
