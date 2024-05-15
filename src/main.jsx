@@ -15,14 +15,14 @@ import MyArtCraft from './components/MyArtCraft/MyArtCraft';
 import AddCraft from './components/AddCraft/AddCraft';
 import CraftDetails from './components/CraftDetails/CraftDetails';
 import UpdateCraft from './components/UpdateCraft/UpdateCraft';
-
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AllCraftCategoryDetails from './components/AllCraftCategoryDetails/AllCraftCategoryDetails';
+import AllSubcategoryCraft from './components/AllSubcategoryCraft/AllSubcategoryCraft';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('https://users-management-server-five.vercel.app/craft')
-        
+
       },
       {
         path: '/login',
@@ -50,29 +50,39 @@ const router = createBrowserRouter([
         loader: () => fetch('https://users-management-server-five.vercel.app/craft')
       },
       {
+        path: '/AllSubcategoryCraft',
+        element: <AllSubcategoryCraft></AllSubcategoryCraft>,
+        loader: () => fetch('https://users-management-server-five.vercel.app/craftSubcategory')
+      },
+      {
         path: '/addcraft',
-        element: <ProtectedRoute> 
-               <AddCraft></AddCraft>,
-      </ProtectedRoute>,
+        element: <ProtectedRoute>
+          <AddCraft></AddCraft>,
+        </ProtectedRoute>,
       },
       {
         path: '/myartcraft/:userEmail',
-        element: <ProtectedRoute> 
-               <MyArtCraft></MyArtCraft>,
-      </ProtectedRoute>,
-      loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/myCraft/${params.userEmail}`)
+        element: <ProtectedRoute>
+          <MyArtCraft></MyArtCraft>,
+        </ProtectedRoute>,
+        loader: ({ params }) => fetch(`https://users-management-server-five.vercel.app/myCraft/${params.userEmail}`)
       },
       {
         path: '/CraftDetails/:id',
         element: <ProtectedRoute>
           <CraftDetails></CraftDetails>
-          </ProtectedRoute>,
-        loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
+        </ProtectedRoute>,
+        loader: ({ params }) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
+      },
+      {
+        path: '/allCraftCategoryDetails/:id',
+        element: <AllCraftCategoryDetails></AllCraftCategoryDetails>,
+       loader: ({ params }) => fetch(`https://users-management-server-five.vercel.app/craftSubcategory/${params.id}`)
       },
       {
         path: '/updateCraft/:id',
-        element:<UpdateCraft></UpdateCraft>,
-        loader: ({params}) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
+        element: <UpdateCraft></UpdateCraft>,
+        loader: ({ params }) => fetch(`https://users-management-server-five.vercel.app/craft/${params.id}`)
       },
     ]
   },
@@ -81,9 +91,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-    <AuthProvider>
-    <RouterProvider router={router} />
-    </AuthProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </HelmetProvider>
   </React.StrictMode>,
 )

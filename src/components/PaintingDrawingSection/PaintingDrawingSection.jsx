@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Zoom } from "react-awesome-reveal";
 
 const PaintingDrawingSection = () => {
     return (
         <section className="my-14">
+            <Zoom>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 text-[#322760]">
                     Welcome to <span className='text-[#c54899]'>Our World</span> of <span className='text-gray-500'>Creativity</span>
                 </h2>
+            </Zoom>
             <div className="bg-[#c54899] bg-opacity-20 py-16 container mx-auto px-4">
                 
                 <p className="text-xl font-semibold text-black leading-relaxed mb-8 text-center">

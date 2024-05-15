@@ -3,6 +3,7 @@ import banner2 from '../../assets/images/banner2.jpg'
 import banner3 from '../../assets/images/banner3.avif'
 import banner4 from '../../assets/images/banner4.avif'
 
+
 const Banner = () => {
     return (
         <div>

@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <div className="mx-auto">
-            <div className="navbar bg-slate-50 shadow-lg">
+            <div className="navbar bg-[#322760] bg-opacity-20 shadow-lg">
                 <div className="w-1/3">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

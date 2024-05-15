@@ -59,7 +59,7 @@ const MyCraftCard = ({ craft, allCraft, setAllCraft }) => {
             <Link to={`/updateCraft/${_id}`}>
             <button className="btn">Update</button>
             </Link>
-            <button onClick={() => handleDelete(_id)} className="btn bg-red-500">Delete</button>
+            <button onClick={() => handleDelete(_id)} className="btn bg-[#322760] hover:bg-[#c54899] text-white">Delete</button>
             </div>
             
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-const CraftDetails = () => {
+const AllCraftCategoryDetails = () => {
     const craft = useLoaderData();
     const { _id, imageUrl, itemName, subcategoryName, shortDescription, price, rating, customization, processingTime, stockStatus, userEmail, userName } = craft;
 
@@ -16,17 +16,12 @@ const CraftDetails = () => {
                 <div className="w-full md:w-1/2 text-center md:text-left md:pl-6 mt-8 md:mt-0 leading-[21px]">
                     <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Category:</span> {subcategoryName}</p>
                     <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Price:</span> ${price}</p>
-                    <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Processing Time:</span> {processingTime}</p>
                     <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Customization:</span> {customization}</p>
-                    <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Stock Status:</span> {stockStatus}</p>
-                    <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">User Name:</span> {userName}</p>
-                    <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">User Email:</span> {userEmail}</p>
                     <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Rating:</span> ⭐ {rating}</p>
-                    <p className="text-gray-700 mb-4"><span className="font-bold text-purple-800">Description:</span> {shortDescription}</p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default CraftDetails;
+export default AllCraftCategoryDetails;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Zoom } from "react-awesome-reveal";
 
 const Accordion = () => {
   const [activeTab, setActiveTab] = useState('painting');
@@ -9,7 +10,9 @@ const Accordion = () => {
 
   return (
     <div className="text-center mb-12">
+      <Zoom>
       <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 text-[#322760]'>Painting and <span className='text-[#c54899]'>Drawing</span> <span className='text-gray-500'>Supplies</span></h1>
+      </Zoom>
       <div className="flex mb-4 justify-center text-xl">
         <button
           className={`${
