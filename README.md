@@ -1,4 +1,4 @@
-Name of Website: Artycraftyness (B9 A10 Type-02 Requirements)
+Name of Website: Artycraftyness
 
 Vercel Live Site URL: https://users-management-server-it4wiz57o-naima-tushins-projects.vercel.app
 
